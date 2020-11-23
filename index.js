@@ -1,5 +1,7 @@
 const express = require('express')
 const bodyParser = require("body-parser");
+const path = require('path')
+
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,10 +21,17 @@ app.listen(port, () => {
 app.post('/api/csv',function(req, res) {
 
 var filename=req.param('file');
+var ext= path.extname(filename);
+if(ext === ".csv"){
 let csvImport = require("./csvImport.js");
 console.log(csvImport);
 csvImport.csvToDB(filename);
 return res.send("Data imported into DB successfully");
+}
+  else
+  {
+   return res.send("CSV file format not found");
+  }
 });
 
 app.get('/api/users',function(req,res){
