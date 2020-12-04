@@ -1,8 +1,9 @@
 # expressCSVtoDB
-This repository contains the code I have written for a recruitment process.
+This repository contains the code I have written for a recruitment process. I have named the app "CalorifyMe". It is built from ExpressJS.
 
 ## Steps to use the project:
-1. Run index.js to start the HTTP server. The server starts on 8080 port.
+1. Run app.js to start the HTTP server. The server starts on 8080 port :
+*node app.js*
 2. Once the server has started, send HTTP requests either using Postman or browser for below mentioned APIs
 
 ## REST APIs
